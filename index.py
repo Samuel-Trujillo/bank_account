@@ -14,8 +14,12 @@ class BankAccount:
         self.display_account= print(f"{self.bank_name}, Account: {self.account_name}, Balance of: {self.cash}")
         return self
     def add_interest(self):
-        self.cash = self.cash + (self.int_rate * self.cash)
+        if self.cash >0:
+            self.cash = self.cash + (self.int_rate * self.cash)
+        else:
+            print("YOU ARE BROKE")
         return self
+
 
 checking1= BankAccount("checking1", .10, 1000)
 savings1= BankAccount("savings1", .20, 2000)
